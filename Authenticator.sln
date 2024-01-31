@@ -3,19 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticator.Api", "Authenticator.Api\Authenticator.Api.csproj", "{539EEC11-AEE8-4B6D-BBD8-4598FF7CE3E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticator.Api", "Authenticator.Api\Authenticator.Api.csproj", "{539EEC11-AEE8-4B6D-BBD8-4598FF7CE3E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticator.Core", "Authenticator.Core\Authenticator.Core.csproj", "{8FA364BE-FC60-4DED-AF65-EE00268E9D4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticator.Core", "Authenticator.Core\Authenticator.Core.csproj", "{8FA364BE-FC60-4DED-AF65-EE00268E9D4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticator.Infra", "Authenticator.Infra\Authenticator.Infra.csproj", "{9D5FCD83-EAA6-4DC9-ABCC-49302CF44200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticator.Infra", "Authenticator.Infra\Authenticator.Infra.csproj", "{9D5FCD83-EAA6-4DC9-ABCC-49302CF44200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{17D02798-60E4-43C9-A631-F12860E21CDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticator.Core.Test", "Authenticator.Core.Test\Authenticator.Core.Test.csproj", "{3A8D1572-156B-4F43-9768-B466260A81B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{539EEC11-AEE8-4B6D-BBD8-4598FF7CE3E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +31,18 @@ Global
 		{9D5FCD83-EAA6-4DC9-ABCC-49302CF44200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D5FCD83-EAA6-4DC9-ABCC-49302CF44200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D5FCD83-EAA6-4DC9-ABCC-49302CF44200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A8D1572-156B-4F43-9768-B466260A81B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8D1572-156B-4F43-9768-B466260A81B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8D1572-156B-4F43-9768-B466260A81B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8D1572-156B-4F43-9768-B466260A81B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A8D1572-156B-4F43-9768-B466260A81B0} = {17D02798-60E4-43C9-A631-F12860E21CDA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA50E3EF-2270-4A22-A81E-EDAC252775E8}
 	EndGlobalSection
 EndGlobal

@@ -12,6 +12,18 @@ namespace Authenticator.Core.AccountContext.ValueObjects;
 public partial class Email
 {
     public const string Pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+    public string Address { get; }
+    public string Hash => Address.ToBase64();
+
+    public VerificationCode Verification { get; private set; } = new();
+
+    public void ResendVerification()
+    {
+        Verification = new VerificationCode();
+    }
+
+    [GeneratedRegex(Pattern)]
+    private static partial Regex EmailRegex();
 
     public Email(string address)
     {
@@ -19,7 +31,7 @@ public partial class Email
             throw new InvalidEmailException("Invalid Email");
         if (address?.Length < 5) 
             throw new InvalidEmailException("Email is too short");
-        if(!EmailRegex().IsMatch(Address)) 
+        if(!EmailRegex().IsMatch(address)) 
             throw new InvalidEmailException("Invalid Email");
         Address = address.Trim().ToLower();
     }
@@ -27,11 +39,9 @@ public partial class Email
     public static implicit operator string(Email email) => email.ToString();
     public static implicit operator Email(string address) => new Email(address);
     public override string ToString() => Address;
-    public string Address { get; }
-    public string Hash => Address.ToBase64();
 
-    [GeneratedRegex(Pattern)]
-    private static partial Regex EmailRegex();
+
+
 
 }
 

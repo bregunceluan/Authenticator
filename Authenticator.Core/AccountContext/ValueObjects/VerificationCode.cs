@@ -17,7 +17,7 @@ public class VerificationCode
     {
         if (IsActived) throw new VerificationCodeException("This code is already verified");
         if (VerifiedAt < DateTime.UtcNow) throw new VerificationCodeException("This code is expired");
-        if (string.Equals(code.Trim(),this.Code.Trim(),StringComparison.CurrentCulture)) throw new VerificationCodeException("The code typed is wrong");
+        if (!string.Equals(code.Trim(),this.Code.Trim(),StringComparison.CurrentCulture)) throw new VerificationCodeException("The code typed is wrong");
         ExpiresAt = null;
         VerifiedAt =  DateTime.UtcNow;
     }
