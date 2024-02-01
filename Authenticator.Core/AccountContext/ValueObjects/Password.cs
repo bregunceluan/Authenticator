@@ -14,6 +14,19 @@ public class Password : ValueObject
     private const string Special = "!@#$%¨&*();^{}[]~";
     public string Hash { get; }
     public string ResetCode { get; } = Guid.NewGuid().ToString("N")[..10].ToLower();
+    public bool Challenge(string plainTextPassword) => Verify(Hash, plainTextPassword); 
+
+    protected Password()
+    {
+        
+    }
+
+    public Password(string? text = null)
+    {
+        if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text)) 
+            text = Generate();
+        Hash = Hashing(text);
+    }
 
     private static string Generate(int length = 16,bool includeSpecialCharachters = true, bool upperCase = false)
     {

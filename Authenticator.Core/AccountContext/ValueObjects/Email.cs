@@ -25,6 +25,8 @@ public partial class Email
     [GeneratedRegex(Pattern)]
     private static partial Regex EmailRegex();
 
+    protected Email() { }
+
     public Email(string address)
     {
         if(string.IsNullOrEmpty(address)) 

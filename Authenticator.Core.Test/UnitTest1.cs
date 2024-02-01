@@ -1,3 +1,4 @@
+using Authenticator.Core.AccountContext.Entities;
 using Authenticator.Core.AccountContext.Exceptions;
 using Authenticator.Core.AccountContext.ValueObjects;
 
@@ -10,8 +11,13 @@ namespace Authenticator.Core.Test
         {
             try
             {
-                var code = new VerificationCode();
-                code.Verify("2143123jll12");
+                var senha = "minh@Senha";
+                var user = new User("luanbregunce@gmail.com", senha);
+                var testeSenha = user.Password.Challenge("teste senha");
+                var testeSenha2 = user.Password.Challenge("minh@senha");
+
+
+
             }
             catch (VerificationCodeException ex)
             {
